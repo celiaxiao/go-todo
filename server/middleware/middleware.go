@@ -19,7 +19,7 @@ import (
 // DB connection string
 // for localhost mongoDB
 // const connectionString = "mongodb://localhost:27017"
-const connectionString = "mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb"
+const connectionString = "mongodb://root:root@127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb"
 
 // Database Name
 const dbName = "test"
