@@ -1,0 +1,20 @@
+version: '3.6'
+
+services:
+  react-client:
+    restart: always
+    image: ${APP_IMAGE_NAME}:${APP_IMAGE_VERSION}
+    container_name: ${CONTAINER_NAME}
+    ports:
+      - ${CONTAINER_PORT}:${APP_PORT}
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    #   - ${VOLUME_CONF_EXT}:${VOLUME_CONF_INN}:ro
+    command:
+      yarn start
+
+
+networks:
+  default:
+    external:
+      name: prod

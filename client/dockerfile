@@ -1,17 +1,17 @@
 # Author: Celia Xiao
 
-ARG     BASE_IMAGE_NAME
-ARG     BASE_IMAGE_VERSION
 
 # base
-FROM    $BASE_IMAGE_NAME:$BASE_IMAGE_VERSION
+FROM    node:14.17.0
 
 # copy source code to workdir
 COPY    . /client
 
 # change the active directory
 WORKDIR /client
-
+RUN     npm install
+RUN     npm install semantic-ui-react semantic-ui-css
+RUN     npm install axios
 # build app
 RUN     yarn build
 

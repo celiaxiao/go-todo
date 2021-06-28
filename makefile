@@ -22,6 +22,10 @@ dev-server: clean
 dev-client:
 	cd client && yarn start
 
+prod: clean
+	cd server && go build && ./go-server &
+	cd client && yarn build
+
 prod-server: clean
 	go build && ./go-server
 
@@ -31,6 +35,10 @@ prod-client:
 docker-server: clean
 	cd server && docker-compose down
 	cd server && docker-compose up
+
+docker-server: 
+	cd client && docker-compose down
+	cd client && docker-compose up
 
 clean:
 	./clean.sh
